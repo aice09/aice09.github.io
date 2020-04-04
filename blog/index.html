@@ -1,0 +1,19 @@
+---
+layout: default
+title: My Blog
+---
+<div class="container blog">
+  <h1 class="title">{{ page.title }}</h1>
+  <p class="title-sub">The official example template of creating a blog with Bootstrap.</p>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 article-others">
+    <ul>
+      {% for post in site.posts %}
+       <li>
+        <h3><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
+        <p>Published on {{ post.date | date_to_string }}</p>
+       </li>
+      {% endfor %}
+    </ul>
+  </div>      
+  </ul>
+</div>
