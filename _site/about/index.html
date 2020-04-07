@@ -3,13 +3,19 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title>About Carl Angelo Nievarez - </title>
+    <title>About Carl Angelo Nievarez - Aice0927 Blog</title>
     <link rel="stylesheet" href="/assets/css/main.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit-icons.min.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom-aice09" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -51,8 +57,22 @@
     </div><!-- /.container -->
 </nav>
 
+   <!--<div class="container">
+      <ol class="article post-content breadcrumb" style="margin-top: 25px;">
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li class="active">About Carl Angelo Nievarez</li>
+    </ol> -->
+    </div>
     <div class="container about">
-    <h1>About</h1>
+		<ol class="article post-content breadcrumb" style="margin-top: 25px;">
+		  <li>
+			  <a href="/">Home</a>
+		  </li>
+		  <li class="active">About</li>
+	  </ol> 
+    <h1 class="page-header">About</h1>
     <p>You can optionally insert a brief bio here. You went to this school, you studied that, you now work in this field with research interests in that subject. At your previous position at this place, you worked on this or that. You can list some of your significant accomplishments, awards, or recognition here as well. You live in this city with these animals and people. In your free time you like X, Y, and Z.</p>
     <ul class="contacts">
 		<li><a href="#">@TwitterHandle</a></li>
@@ -61,10 +81,12 @@
 	</ul>
 </div>
 
+
+
     <hr>
 <footer>
     <div class="container">
-        <p>&copy; 2020 Carl Angelo Nievarez. Made from scratch.</p>
+        <p>&copy; 2020 Carl Angelo Nievarez. Made from scratch <span uk-icon="cog"></span>.</p>
     </div>
 </footer>
     <!--JQuery 3.2.1-->

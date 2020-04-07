@@ -3,6 +3,8 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="{{page.keywords}}">
     <title>{{ page.title }} - {{ site.title }}</title>
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
     <!-- Latest compiled and minified CSS -->
@@ -15,16 +17,38 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit-icons.min.js"></script>
   </head>
   <body>
-    {% include navbar.html %}    
-    <div class="container">
-      <ol class="article post-content breadcrumb" style="margin-top: 25px;">
-        <li>
-            <a href="/">Home</a>
-        </li>
-        <li class="active">Blog</li>
-    </ol> 
-    {{ content}}
-</div>
+    {% include navbar.html %}
+    <div class="container">      
+        <ol class="article post-content breadcrumb" style="margin-top: 25px;">
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/blog">Blog</a>
+            </li>
+            <li class="active">{{ page.title }}</li>
+        </ol> 
+
+        {% if page.image ==  %}
+            <!--Nothing to display-->
+        {% else %}
+            <img src="{{ page.image }}" class="img-responsive" alt="{{ page.image }}" width="100%">
+        {% endif %}    
+
+        <h1 class="post-content content-title">{{ page.title }}</h1>
+        <p class="post-content content-author"><b>Published:</b> {{ page.date | date: "%B %d, %Y" }}</p>
+        <p class="post-content content-tags">
+            {% for tag in page.tags %}
+            <span class="label-custom-aice09" style="font-size:12px">#{{ tag }}</span>            
+            {% endfor %}
+        </p>
+        <br>
+      <div class="article post-content">
+        {{ content}}
+        <p>&#x25CF; End &#x25CF;</p>
+      </div>  
+    
+    </div>
     {% include footer.html %}
     <!--JQuery 3.2.1-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    

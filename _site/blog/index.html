@@ -3,13 +3,19 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title>My Blog - </title>
+    <title>My Blog - Aice0927 Blog</title>
     <link rel="stylesheet" href="/assets/css/main.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit-icons.min.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom-aice09" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -50,32 +56,85 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container -->
 </nav>
-
+    
+    <div class="container">
+      <ol class="article post-content breadcrumb" style="margin-top: 25px;">
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li class="active">Blog</li>
+    </ol> 
     <div class="container blog">
-  <h1 class="title">My Blog</h1>
-  <p class="title-sub">The official example template of creating a blog with Bootstrap.</p>
+  <h1 class="article-title" >My Blog</h1>
+  <p class="title-sub">The lastest articles today.</p>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 article-others">
-    <ul>
+      <!-- using the truncate filter -->
+      <!---->      
+      <span class="post-date"><b>Article</b> March 13, 2020</span>
+      <h2 class="article-title-inlist"><a href="/webdev/2020/03/13/getting-started-with-xampp.html">Getting Started with XAMPP</a></h2>
       
-       <li>
-        <h3><a href="/git/2020/04/03/my-self-hosted-git-server.html" title="My Self-Hosted Git Server">My Self-Hosted Git Server</a></h3>
-        <p>Published on 03 Apr 2020</p>
-       </li>
+      <span class="label-custom-aice09">#discuss</span>            
       
-       <li>
-        <h3><a href="/2019/04/03/getting-started-with-jekyll-in-windows.html" title="Getting Started with Jekyll in Windows OS">Getting Started with Jekyll in Windows OS</a></h3>
-        <p>Published on 03 Apr 2019</p>
-       </li>
+      <span class="label-custom-aice09">#webdev</span>            
       
-    </ul>
+      <span class="label-custom-aice09">#productivity</span>            
+      
+      <p><a href="/webdev/2020/03/13/getting-started-with-xampp.html" class="article-link-inlist">Read Article <span uk-icon="icon: arrow-right"></span> </a></p>
+     
+      <hr>
+      <!---->      
+      <span class="post-date"><b>Article</b> March 09, 2020</span>
+      <h2 class="article-title-inlist"><a href="/self/2020/03/09/when-i-start-to-jump-into-programming-5d9o.html">When I Start To Jump Into Programming?</a></h2>
+      
+      <span class="label-custom-aice09">#discuss</span>            
+      
+      <span class="label-custom-aice09">#beginners</span>            
+      
+      <span class="label-custom-aice09">#webdev</span>            
+      
+      <span class="label-custom-aice09">#productivity</span>            
+      
+      <p><a href="/self/2020/03/09/when-i-start-to-jump-into-programming-5d9o.html" class="article-link-inlist">Read Article <span uk-icon="icon: arrow-right"></span> </a></p>
+     
+      <hr>
+      <!---->      
+      <span class="post-date"><b>Article</b> April 03, 2019</span>
+      <h2 class="article-title-inlist"><a href="/git/2019/04/03/my-self-hosted-git-server.html">My Self-Hosted Git Server</a></h2>
+      
+      <span class="label-custom-aice09">#discuss</span>            
+      
+      <span class="label-custom-aice09">#webdev</span>            
+      
+      <span class="label-custom-aice09">#productivity</span>            
+      
+      <p><a href="/git/2019/04/03/my-self-hosted-git-server.html" class="article-link-inlist">Read Article <span uk-icon="icon: arrow-right"></span> </a></p>
+     
+      <hr>
+      <!---->      
+      <span class="post-date"><b>Article</b> April 03, 2019</span>
+      <h2 class="article-title-inlist"><a href="/jamstack/2019/04/03/getting-started-with-jekyll-in-windows.html">Getting Started with Jekyll in Windows OS</a></h2>
+      
+      <span class="label-custom-aice09">#discuss</span>            
+      
+      <span class="label-custom-aice09">#devops</span>            
+      
+      <span class="label-custom-aice09">#webdev</span>            
+      
+      <span class="label-custom-aice09">#productivity</span>            
+      
+      <p><a href="/jamstack/2019/04/03/getting-started-with-jekyll-in-windows.html" class="article-link-inlist">Read Article <span uk-icon="icon: arrow-right"></span> </a></p>
+     
+      <hr>
+      <!---->
   </div>      
   </ul>
 </div>
-
+ 
+</div>
     <hr>
 <footer>
     <div class="container">
-        <p>&copy; 2020 Carl Angelo Nievarez. Made from scratch.</p>
+        <p>&copy; 2020 Carl Angelo Nievarez. Made from scratch <span uk-icon="cog"></span>.</p>
     </div>
 </footer>
     <!--JQuery 3.2.1-->

@@ -1,25 +1,17 @@
----
-layout: articles
-title: "Getting Started with Jekyll in Windows OS"
-author: Carl Angelo Nievarez
-readingduration: 3 minutes
-date: 2019-04-03
-tags: "discuss devops webdev productivity"
-categories: jamstack
-image: 
-keywords: getting-started-with-jekyll jekyll-story jekyll-website how-to-create-jekyll-website jekyll-installation jamstack jekyll-jamstack
----
+I"�)<ol>
+  <li>Download and Install a <strong>Ruby+Devkit</strong> version from <a href="https://rubyinstaller.org/downloads/">RubyInstaller Downloads</a>. Use default options for installation.</li>
+  <li>Run the <code class="highlighter-rouge">ridk install</code> after ruby installation wizard. Install all 3 components because this is needed for installing gems with native extensions base from <a href="https://github.com/oneclick/rubyinstaller2#using-the-installer-on-a-target-system"><strong>Ruby Installer Documentation</strong></a>.</li>
+  <li>To check which ruby and gem version installed in your computer, open command prompt and type <code class="highlighter-rouge">ruby -v</code> and <code class="highlighter-rouge">gem -v</code>.
+    <ul>
+      <li>If <code class="highlighter-rouge">ruby</code> is not recognized in your computer, go to Ruby bin folder and copy the directory path. By default it’s directory path should be like this <code class="highlighter-rouge">C:\Ruby26-x64\bin</code>.</li>
+      <li>Next step, go to <code class="highlighter-rouge">Control Panel\System and Security\System</code> and open <strong>Advanced System Settings</strong>. Click on <strong>Environment Variables</strong> and double-click <code class="highlighter-rouge">Path</code> under <strong>System Variables</strong> to edit it.</li>
+      <li>Then add the <strong>ruby path directory</strong> by clicking <strong>New</strong> and pasting the copied ruby bin directory. Then click OK and apply changes to run <code class="highlighter-rouge">ruby</code> command.</li>
+    </ul>
+  </li>
+  <li>Then open command prompt to install Jekyll and Bundler via: <code class="highlighter-rouge">gem installer jekyll bundler</code>. The following text will be displayed during installation.</li>
+</ol>
 
-1. Download and Install a **Ruby+Devkit** version from [RubyInstaller Downloads](https://rubyinstaller.org/downloads/). Use default options for installation.
-2. Run the ```ridk install``` after ruby installation wizard. Install all 3 components because this is needed for installing gems with native extensions base from [**Ruby Installer Documentation**](https://github.com/oneclick/rubyinstaller2#using-the-installer-on-a-target-system).
-3. To check which ruby and gem version installed in your computer, open command prompt and type ```ruby -v``` and ```gem -v```.
-    +  If ```ruby``` is not recognized in your computer, go to Ruby bin folder and copy the directory path. By default it's directory path should be like this ```C:\Ruby26-x64\bin```.
-    + Next step, go to ```Control Panel\System and Security\System``` and open **Advanced System Settings**. Click on **Environment Variables** and double-click ```Path``` under **System Variables** to edit it.
-    + Then add the **ruby path directory** by clicking **New** and pasting the copied ruby bin directory. Then click OK and apply changes to run ```ruby``` command.
-4. Then open command prompt to install Jekyll and Bundler via: ```gem installer jekyll bundler```. The following text will be displayed during installation.
-
-```plaintext
-C:\Users\IAmCarl>gem install jekyll bundler
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Users\IAmCarl&gt;gem install jekyll bundler
 Fetching em-websocket-0.5.1.gem
 Fetching http_parser.rb-0.6.0.gem
 Fetching eventmachine-1.2.7-x64-mingw32.gem
@@ -121,38 +113,42 @@ Installing ri documentation for bundler-2.1.4
 Done installing documentation for bundler after 45 seconds
 20 gems installed
 
-C:\Users\IAmCarl>jekyll -v
+C:\Users\IAmCarl&gt;jekyll -v
 jekyll 4.0.0
 
-C:\Users\IAmCarl>
-``` 
-5. Check if Jekyll installed properly: ```jekyll -v```
+C:\Users\IAmCarl&gt;
+</code></pre></div></div>
+<ol>
+  <li>Check if Jekyll installed properly: <code class="highlighter-rouge">jekyll -v</code></li>
+</ol>
 
-That’s it, you’re ready to use Jekyll!
+<p>That’s it, you’re ready to use Jekyll!</p>
 
-## Create a New Site
+<h2 id="create-a-new-site">Create a New Site</h2>
 
-It’s time to create a site!
+<p>It’s time to create a site!</p>
 
-1. Create a new directory for your site, you can name it whatever you’d like. 
-2. Then add your first file, for example create ```index.html```.
+<ol>
+  <li>Create a new directory for your site, you can name it whatever you’d like.</li>
+  <li>Then add your first file, for example create <code class="highlighter-rouge">index.html</code>.</li>
+</ol>
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
-	<h1>Hello World From Jekyll!</h1>
-</body>
-</html>
-```     
-3. Then **build** the site to output static site to a directory called ```_site```.
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+	<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+	<span class="nt">&lt;h1&gt;</span>Hello World From Jekyll!<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+<ol>
+  <li>Then <strong>build</strong> the site to output static site to a directory called <code class="highlighter-rouge">_site</code>.</li>
+</ol>
 
-```plaintext
-D:\Jekyll_Sites\firstsite>jekyll build
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:\Jekyll_Sites\firstsite&gt;jekyll build
 
 Configuration file: none
             Source: D:/Jekyll_Sites/firstsite
@@ -161,12 +157,13 @@ Configuration file: none
       Generating...
                     done in 0.094 seconds.
  Auto-regeneration: disabled. Use --watch to enable.
- ``` 
+</code></pre></div></div>
 
-4. Then run local web server, be default jekyll web server run in port **4000**, in order to browse the site go to **[http://localhost:4000/](http://localhost:4000/)**.
+<ol>
+  <li>Then run local web server, be default jekyll web server run in port <strong>4000</strong>, in order to browse the site go to <strong><a href="http://localhost:4000/">http://localhost:4000/</a></strong>.</li>
+</ol>
 
-```plaintext
-D:\Jekyll_Sites\firstsite>jekyll serve
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:\Jekyll_Sites\firstsite&gt;jekyll serve
 Configuration file: none
             Source: D:/Jekyll_Sites/firstsite
        Destination: D:/Jekyll_Sites/firstsite/_site
@@ -174,18 +171,21 @@ Configuration file: none
       Generating...
                     done in 0.13 seconds.
   Please add the following to your Gemfile to avoid polling for changes:
-    gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+    gem 'wdm', '&gt;= 0.1.0' if Gem.win_platform?
  Auto-regeneration: enabled for 'D:/Jekyll_Sites/firstsite'
     Server address: http://127.0.0.1:4000
   Server running... press ctrl-c to stop.
-```
-> **Note:** To run Jekyll in different port use  ```jekyll serve --port 4001 --host my_hostname_or_ip``` or put ```port:4001``` in your **_config.yml**.
+</code></pre></div></div>
+<blockquote>
+  <p><strong>Note:</strong> To run Jekyll in different port use  <code class="highlighter-rouge">jekyll serve --port 4001 --host my_hostname_or_ip</code> or put <code class="highlighter-rouge">port:4001</code> in your <strong>_config.yml</strong>.</p>
+</blockquote>
 
-That’s it, you’re site is running via Jekyll!
+<p>That’s it, you’re site is running via Jekyll!</p>
 
-**References:**
+<p><strong>References:</strong></p>
 
-[https://jekyllrb.com/docs/installation/windows/](https://jekyllrb.com/docs/installation/windows/)  
-[https://jekyllrb.com/docs/step-by-step/01-setup/](https://jekyllrb.com/docs/step-by-step/01-setup/)    
-[https://jekyllrb.com/docs/configuration/options/#serve-command-options](https://jekyllrb.com/docs/configuration/options/#serve-command-options)    
-[https://stackoverflow.com/questions/25650749/is-it-possible-to-serve-multiple-jekyll-sites-locally](https://stackoverflow.com/questions/25650749/is-it-possible-to-serve-multiple-jekyll-sites-locally)
+<p><a href="https://jekyllrb.com/docs/installation/windows/">https://jekyllrb.com/docs/installation/windows/</a><br />
+<a href="https://jekyllrb.com/docs/step-by-step/01-setup/">https://jekyllrb.com/docs/step-by-step/01-setup/</a>  <br />
+<a href="https://jekyllrb.com/docs/configuration/options/#serve-command-options">https://jekyllrb.com/docs/configuration/options/#serve-command-options</a>  <br />
+<a href="https://stackoverflow.com/questions/25650749/is-it-possible-to-serve-multiple-jekyll-sites-locally">https://stackoverflow.com/questions/25650749/is-it-possible-to-serve-multiple-jekyll-sites-locally</a></p>
+:ET

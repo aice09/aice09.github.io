@@ -1,0 +1,138 @@
+I"�.<p>One of the most useful application for developer, the XAMPP. And one of my starter kit in development. This is how I configure this application.</p>
+
+<h3 id="i-installing-xampp">I. Installing XAMPP</h3>
+<ol>
+  <li>Download XAMPP depends upon the OS you are using. Note: In these example, I’m using Windows operating sytem</li>
+  <li>Install the application, ignore the UAC first. Decide where your XAMPP folder will be created. In my case I have an allocated drive for all my development applications and I never put it in drive C.</li>
+  <li>And then Start XAMPP Control Panel.</li>
+</ol>
+
+<h3 id="ii-configuring-apache-php-and-mysql">II. Configuring Apache, PHP and MySQL</h3>
+<h3 id="a-accessing-phpmyadmin">A. Accessing phpMyadmin</h3>
+<p>By default you will get the following error when accessing the phpMyadmin over network in during fresh installation.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Access forbidden!
+New XAMPP security concept:
+Access to the requested directory is only available from the local network.
+This setting can be configured in the file "httpd-xampp.conf".
+If you think this is a server error, please contact the webmaster.
+Error 403
+192.168.5.6
+Apache/2.4.37 (Win32) OpenSSL/1.1.1a PHP/7.3.1
+</code></pre></div></div>
+<p>The following are the steps to fix the problem:</p>
+<ol>
+  <li>Open XAMPP Control Panel</li>
+  <li>In the Apache service config button or select box, click <strong>httpd-xampp.conf</strong></li>
+  <li>Go to the following line and change the <strong>Require local</strong> by <strong>Require all granted</strong>.</li>
+  <li>The go back to the XAMPP control panel and restart the Apache service.</li>
+</ol>
+
+<h3 id="b-setting-phpmyadmin-with-credentials">B. Setting PHPMyAdmin With Credentials</h3>
+<ol>
+  <li>Open XAMPP Control Panel</li>
+  <li>In the Apache service config button or select box, click <strong>config.inc.php</strong></li>
+  <li>Add blowfish secret key
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$cfg</span><span class="p">[</span><span class="s1">'blowfish_secret'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'yourblowfishkeyhere12345'</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>And change the auth_type ,user, password, and AllowNoPassword Authentication type and info
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$cfg</span><span class="p">[</span><span class="s1">'Servers'</span><span class="p">][</span><span class="nv">$i</span><span class="p">][</span><span class="s1">'auth_type'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'cookie'</span><span class="p">;</span>
+<span class="nv">$cfg</span><span class="p">[</span><span class="s1">'Servers'</span><span class="p">][</span><span class="nv">$i</span><span class="p">][</span><span class="s1">'user'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'root'</span><span class="p">;</span>
+<span class="nv">$cfg</span><span class="p">[</span><span class="s1">'Servers'</span><span class="p">][</span><span class="nv">$i</span><span class="p">][</span><span class="s1">'password'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'yourpasswordhere'</span><span class="p">;</span>
+<span class="nv">$cfg</span><span class="p">[</span><span class="s1">'Servers'</span><span class="p">][</span><span class="nv">$i</span><span class="p">][</span><span class="s1">'extension'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'mysqli'</span><span class="p">;</span>
+<span class="nv">$cfg</span><span class="p">[</span><span class="s1">'Servers'</span><span class="p">][</span><span class="nv">$i</span><span class="p">][</span><span class="s1">'AllowNoPassword'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="nv">$cfg</span><span class="p">[</span><span class="s1">'Lang'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>The go back to the XAMPP control panel and restart the Apache service.</li>
+</ol>
+
+<h3 id="c-grant-all-privileges-to-mysql-user-in-any-host">C. Grant All Privileges To MySQL User in Any Host</h3>
+
+<p>By default root account are not accessible outside your localhost
+It means that you are not allowed to connect to the MySQL database over the network, but you can use it in your host PC or server and use with your project. Even adding new connection to your database management tool like HeidiSQL and Navicat is not working. To fix the following problem, this is the solution.</p>
+
+<ol>
+  <li>Go to phpMyadmin or CLI login using root account or any SUPER USER.</li>
+  <li>Run the following query to grant all privilage of your user in any valid host.
+    <div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">mysql</span><span class="w"> </span><span class="err">&gt;</span><span class="w"> </span><span class="nx">GRANT</span><span class="w"> </span><span class="nx">ALL</span><span class="w"> </span><span class="nx">PRIVILEGES</span><span class="w"> </span><span class="nx">ON</span><span class="w"> </span><span class="o">*.*</span><span class="w"> </span><span class="nx">TO</span><span class="w"> </span><span class="s1">'root'</span><span class="err">@</span><span class="s1">'%'</span><span class="w"> </span><span class="nx">IDENTIFIED</span><span class="w"> </span><span class="nx">BY</span><span class="w"> </span><span class="s1">'yourpassword'</span><span class="w"> </span><span class="nx">WITH</span><span class="w"> </span><span class="nx">GRANT</span><span class="w"> </span><span class="nx">OPTION</span><span class="p">;</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>To save changes using the execute <strong>FLUSH PRIVILEGES</strong>.
+    <div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">mysql</span><span class="w"> </span><span class="err">&gt;</span><span class="w"> </span><span class="nx">FLUSH</span><span class="w"> </span><span class="nx">PRIVILEGES</span><span class="p">;</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="d-configuring-timezone">D. Configuring Timezone</h3>
+
+<p>By default PHP timezone is <em>date.timezone=Europe/Berlin</em>, to change timezone, follow the steps below.</p>
+
+<ol>
+  <li>Open XAMPP Control Panel</li>
+  <li>In the Apache service config button or select box, click <strong>php.ini</strong></li>
+  <li>Find date.timezone using <strong>CTRL + F</strong> in your text editor.</li>
+  <li>Change the value of the timezone depends on your location or preference. In my case it set it to date
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>timezone=Asia/Manila.
+</code></pre></div>    </div>
+  </li>
+  <li>Save and restart apache services.</li>
+</ol>
+
+<h3 id="e-changing-apache-ports">E: Changing Apache Ports</h3>
+
+<p>By default <em>XAMPP ports are set to 80</em> but some instances that port 80 are already use by other web server like <strong>IIS</strong> and <strong>Nginx</strong>. Here’s the way to change it.</p>
+
+<ol>
+  <li>Open XAMPP Control Panel</li>
+  <li>Click the Config button on panel side to show the <strong>Configuration of Control Panel</strong>.</li>
+  <li>Click Service and Port Settings and Save.</li>
+  <li>In the Apache service config button or select box, click <strong>httpd.conf</strong></li>
+  <li>Find <em>Listen 80</em> and change the port to your desired port number. To easily change all port number use <strong>CTRL + H</strong> to find and replace all ports.</li>
+  <li>The go back to the XAMPP control panel and restart the Apache service.</li>
+</ol>
+
+<h3 id="iii-configuring-filezilla">III. Configuring FileZilla</h3>
+<p>XAMPP also has FileZilla Server in order for the developer securely tranfer all files via ftp or sftp. By default Filezilla server listen to port 21 and has unlimited user set. To get started to use filezilla server follow the simple instructions below.</p>
+
+<ol>
+  <li>Open XAMPP Control Panel and start Filezilla services</li>
+  <li>In the Filezilla service click the admin button to show the filezilla server login credentials. By default it’s server address <strong>127.0.0.1</strong>, port <strong>14147</strong> and <strong>empty administration password</strong>.</li>
+  <li>To configure settings, just go to edit and select settings. In these section we just change the admin password. To do this go to the <em>Admin Interface Settings</em> and <em>check the change admin password</em>. Then enter your desired password for your FileZilla server and click OK.</li>
+  <li>Then start to add ftp group for your team.     <br />
+ a. Click the group icon to show the groups configuration window.  <br />
+ b. In General click the add group button and enter your desired group name.   <br />
+ c. The go to the Shared Folder to add project directory.</li>
+  <li>Then start to add ftp user.    <br />
+ a. Click the user icon to show the user configuration window. <br />
+ b. In General click the add user button and enter your desired username. Add password, choose your group if you belong to a group, and make sure to check the enable account. <br />
+ c. To add project directory go to Shared Folder to add project directory. If you belong to a group, make sure you choose a groupname under General tab because a configure group has shared folder that will be display to your account when you login.</li>
+  <li>To check if the FTP configuration properly working, <strong>open Windows Explorer or browser</strong>,type <em>ftp://yourhostserver</em>, and press enter. Then login credentials will appear, use the account created in your ftp server to enter the directory. Once you log successfully all project will be display, you can read, write, append, and delete file directly depends on your account.</li>
+</ol>
+
+<blockquote>
+  <p>Note: In these part, the shared directory are the directory where my project located. For example our group project directory name firstproject are located under the htdocs folder. Therefore, the directory will be added to this part. If there are more than one project directory for your group, use aliases to display each folder every time you use you FTP account.</p>
+</blockquote>
+
+<h3 id="iv-overview-with-mercury">IV. Overview with Mercury</h3>
+<p>Mercury is a fully independent mail server and can provide email services to all standards-compliant email clients. This is a application that you can create email for your organization.</p>
+
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/7dcaUUlsMOg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h3 id="v-configuring-tomcat">V. Configuring Tomcat</h3>
+<p>Tomcat provides a “pure Java” HTTP web server environment in which Java code can run. By default tomcat server are set to port 8080 and tomcat users are not set in the <strong>manager-gui</strong>. manager-gui role are required to operate the “/manager/html” web application.</p>
+
+<p>Tomcat Roles:</p>
+
+<script src="https://gist.github.com/aice09/404319fc3d674c56f6f49ac76ce9c05d.js"></script>
+
+<ol>
+  <li>Open XAMPP Control Panel</li>
+  <li>In the Tomcat service config button or select box, click <strong>tomcat-users.xml</strong></li>
+  <li>Copy and paste the given roles above inside <strong>tomcat-users</strong>.</li>
+  <li>The go back to the XAMPP control panel and restart the Tomcat service.</li>
+</ol>
+
+<p>All things ready for your development.</p>
+:ET

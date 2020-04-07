@@ -1,22 +1,69 @@
 body { background: #ffffff; color: #000000; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
 
 /* Move down content because we have a fixed navbar that is 50px tall */
-body { padding-top: 50px; padding-bottom: 20px; }
+body { padding-top: 50px; padding-bottom: 20px; font-size: 20px; }
 
-/*Home*/
-.home .jumbotron { background: url("https://images.unsplash.com/photo-1523895665936-7bfe172b757d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80") no-repeat center center; -webkit-background-size: 100% 100%; -moz-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 100%; background-position: top; }
+.navbar-custom-aice09 { font-family: Georgia, "Times New Roman", Times, serif; font-size: 1.5em; font-weight: bold; }
 
-.home h2 { font-size: 50px; }
+/*Home .home .jumbotron { background: url("https://images.unsplash.com/photo-1523895665936-7bfe172b757d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80") no-repeat center center;  -webkit-background-size: 100% 100%; -moz-background-size: 100% 100%; -o-background-size: 100% 100%; background-size: 100%; background-position: top; }*/
+.home h1 { font-size: 50px; font-weight: bold; }
+
+.home p { font-family: Georgia, "Times New Roman", Times, serif; font-size: 20px; }
+
+.home .iamcurios { font-family: Georgia, "Times New Roman", Times, serif; font-size: 20px; }
 
 /*About*/
-.about h1 { font-size: 50px; }
+.about .page-header { font-size: 50px; font-weight: bold; }
+
+.about p { font-family: Georgia, "Times New Roman", Times, serif; font-size: 20px; }
+
+ul li { font-family: Georgia, "Times New Roman", Times, serif; font-size: 20px; }
+
+ol li { font-family: Georgia, "Times New Roman", Times, serif; font-size: 20px; }
 
 /*CV*/
-.cv h1 { font-size: 50px; }
+.cv .page-header { font-size: 50px; font-weight: bold; }
+
+.cv p { font-family: Georgia, "Times New Roman", Times, serif; font-size: 20px; }
 
 /*Blog*/
-.blog .title { font-size: 50px; }
+.blog .article-title { font-size: 50px; font-weight: bold; }
 
 .blog .title-sub { font-family: Georgia, "Times New Roman", Times, serif; font-size: 20px; color: #999999; }
+
+.blog .article-title-inlist { font-size: 40px; color: #000; font-weight: bold; margin: 0px; padding: 0px; }
+
+.blog .article-title-inlist a { color: #000; }
+
+.blog .article-link-inlist:hover { color: #000; text-decoration: none; }
+
+.label-custom-aice09 { border: 3px #777 solid; display: inline; padding: .2em .6em .3em; font-size: 85%; font-weight: 700; line-height: 2.4; color: #777; text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: .70em; }
+
+.label-custom-aice09 { cursor: pointer; }
+
+/* Blog Content */
+.content-title { font-weight: bold; font-size: 50px; margin-bottom: 2px; }
+
+.content-author { padding: 0px; margin-top: 0px; margin-bottom: 2px; font-family: Georgia, "Times New Roman", Times, serif; }
+
+.content-tags { padding: 0px; margin: 0px; }
+
+.post-content p { font-family: Georgia, "Times New Roman", Times, serif; font-size: 20px; }
+
+.post-content ul li { font-family: Georgia, "Times New Roman", Times, serif; font-size: 20px; }
+
+.post-content ol li { font-family: Georgia, "Times New Roman", Times, serif; font-size: 20px; }
+
+.post-content h1 { font-family: Georgia, "Times New Roman", Times, serif; }
+
+.post-content h2 { font-family: Georgia, "Times New Roman", Times, serif; margin-bottom: 3px; }
+
+.post-content h3 { font-family: Georgia, "Times New Roman", Times, serif; margin-bottom: 3px; }
+
+.post-content h5 { font-family: Georgia, "Times New Roman", Times, serif; margin-bottom: 3px; }
+
+.post-content h6 { font-family: Georgia, "Times New Roman", Times, serif; margin-bottom: 3px; }
+
+.breadcrumb { font-family: Georgia, "Times New Roman", Times, serif; font-size: 20px; }
 
 /*# sourceMappingURL=main.css.map */
