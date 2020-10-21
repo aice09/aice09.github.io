@@ -10,8 +10,6 @@ image: https://images.unsplash.com/photo-1547954575-855750c57bd3?ixlib=rb-1.2.1&
 keywords: getting-started-in-programming programming-software best-text-editor sublime-text3 text-editor
 ---
 
-![Drag Racing](https://images.unsplash.com/photo-1547954575-855750c57bd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)
-
 Sublime Text is a sophisticated text editor for code, markup and prose. You'll love the slick user interface, extraordinary features and amazing performance.
 
 This is one of my most used text editor when creating different projects. This is very fast and even their are tons of lines of code on your file. And their are tons of plugins can be installed the same with other text editor. I love to used the Monakai color scheme. I used this for more than 5 years without license key.
