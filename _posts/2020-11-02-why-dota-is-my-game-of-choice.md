@@ -3,7 +3,7 @@ layout: articles
 title: "Why DOTA Is My Game of Choice?"
 author: Carl Angelo Nievarez
 readingduration: 3 minutes
-date: 2020-10-21
+date: 2020-11-02
 tags: "game inspiration"
 categories: inspiration
 image: http://www.mediafire.com/convkey/1221/hahglqo4rrg8wudzg.jpg?size_id=5
