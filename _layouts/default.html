@@ -2,6 +2,9 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  {% if site.env.SITE_TOKEN %}
+  <meta name="google-site-verification" content="{{ site.env.SITE_TOKEN }}">
+  {% endif %}
   <title>{{ page.title }}</title>
 </head>
 <body>
