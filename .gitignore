@@ -1,0 +1,9 @@
+# Ignore Jekyll build output
+_site/
+
+# Ignore Jekyll metadata file
+.jekyll-metadata
+
+# Ignore bundler config files
+/.bundle
+Gemfile.lock

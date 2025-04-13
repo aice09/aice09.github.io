@@ -5,6 +5,16 @@
   <title>{{ page.title }}</title>
 </head>
 <body>
-  {{ content }}
+  <nav>
+    <ul>
+      <li><a href="{{ "/" | absolute_url }}">Home</a></li>
+      <li><a href="{{ "/posts.html" | absolute_url }}">Blog</a></li>
+      <li><a href="{{ "/tags.html" | absolute_url }}">Tags</a></li>
+    </ul>
+  </nav>
+
+  <div>
+    {{ content }}
+  </div>
 </body>
 </html>
