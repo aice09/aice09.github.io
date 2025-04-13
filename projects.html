@@ -1,0 +1,40 @@
+---
+layout: default
+title: Projects
+---
+
+<article>
+    <h1>{{ page.title }}</h1>
+    <p><em>{{ page.date }}</em></p>
+    {{ content }}
+  
+    <nav style="margin-top: 2rem;">
+      {% assign current = page %}
+      {% assign index = nil %}
+      {% for proj in site.projects %}
+        {% if proj.url == current.url %}
+          {% assign index = forloop.index0 %}
+        {% endif %}
+      {% endfor %}
+  
+      {% assign prev_index = index | minus: 1 %}
+      {% assign next_index = index | plus: 1 %}
+  
+      <div class="project-nav">
+        {% if site.projects[prev_index] %}
+          ← <a href="{{ site.projects[prev_index].url | relative_url }}">
+            {{ site.projects[prev_index].title }}
+          </a>
+        {% endif %}
+  
+        {% if site.projects[next_index] %}
+          <span style="float: right;">
+            <a href="{{ site.projects[next_index].url | relative_url }}">
+              {{ site.projects[next_index].title }}
+            </a> →
+          </span>
+        {% endif %}
+      </div>
+    </nav>
+  </article>
+  
